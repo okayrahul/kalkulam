@@ -2,7 +2,7 @@
 
 [Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-The archive contains **408 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
+The archive contains **438 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
 
 ## Explore
 
@@ -84,3 +84,12 @@ The supplied 12-page scanned Arappura-2026 PDF adds **161 people** and **57 unio
 The user corrected the existing name to **V. Sharada Thankachy**, using the PDF's surname spelling, and **Anandavalli Amma** as Viswanathan Thampi's wife. Existing IDs and incoming links remain stable; prior labels are search aliases. Sarada P Nair in Family 1 remains spelled Sarada, exactly as the new PDF prints her distinct name.
 
 Phone numbers appear only on expanded profiles as tap-to-call links. Display strings retain the source's spaces, plus signs, and leading zeros; no country codes or missing values are guessed. The PDF repeats the same number for Sabarinath/Arathi, Akshay/Sanjana, and five members of the Parulekar household; those repeated values are preserved. Jayalakshmi and Madhavan Nair have similar but different numbers, 9946356709 and 9846356709 respectively, and are not conflated. Occupation/student descriptions are dated source information, not assertions about current employment. The supplied founder portraits are cropped faithfully into assets.
+
+
+## Sarojini / Lekshmi Nilayam diagram addition
+
+The supplied Sarojini diagram adds **30 people** (18 descendants and 12 spouses) beneath the existing V. Sarojini Thankachi and L. K. Krishnan Nair couple. The four children are Rema Devi S., Hema Vijayakumar, Prema S, and Dr. Sarojini Sudha. The branch now includes 32 people across generations two through five, bringing the full archive to **438 people** and 156 family unions.
+
+Children are assigned according to the descending arrows; marriage arrows identify spouses. In particular, Harikumar A and Archana Shankar are Rema Devi's children; Girish Thampy and Vignesh Thampy are Hema's children; Athira S. and Chithira S. are Dr. Sarojini Sudha's children. Karan and Nirbhay are children of Archana and Col. Shankar Gopinath; Peyasha is Karan's spouse. Sanjana Nair is the child of Harikumar and Parvathi, married to Srinath Nair. Prema and Ramachandran Nair have no descendants supplied in this diagram; this does not imply confirmed childlessness.
+
+Source spellings including Thampy, Peyasha, Amarys Praveen, and Harikumar A are preserved. No family member is merged with a similarly named person in an earlier branch. No phone numbers or deceased statuses are supplied by this diagram.
