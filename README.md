@@ -2,7 +2,7 @@
 
 [Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-The archive contains **149 people across six generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Ananda Valliyamma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi.
+The archive contains **247 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Ananda Valliyamma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, and the Kodavilakom family descending through V. Kamalamma Thankachi.
 
 ## Explore
 
@@ -63,3 +63,15 @@ The user confirmed **Thanuvan Thampi** and **Lekshmi Kunjamma** as the correct n
 **Unnamed records:** Devi’s spouse, Rohith’s spouse, Kalyani’s spouse, Manoj and Beth’s unnamed daughter, and two unnamed sons of Shankar and Anita. These six records have distinct stable IDs and explicit placeholder labels, not invented names or birth order. The spouses and children are attached only to the families shown.
 
 **Repeated names:** Gopinathan Nair in the Ambika family remains separate from the Gopinathan Nair married to Sreekumari in the Arumanai branch. The two Anitas, two Adityas, and Gayatri/Gayathri also have separate records. Search now displays parents or partners to distinguish them. No cross-branch identity merges are assumed. Employment, education, residence, and student descriptions are retained as source notes, not verified current statuses.
+
+## Kodavilakom PDF addition
+
+The 37-page supplied PDF contributes **98 new people**: Bhanumathy Thankachi (also recorded as Bhagavathy Pilla Thankachi), her spouse Bhaskaran Nair, and all 96 numbered member-detail entries. These join the existing V. Kamalamma Thankachi and Velayudhan Thampi family. No duplicate records are created for the original roots or Kamalamma’s couple. Her subtree now contains 100 people including the existing couple, and 64 descendants; the archive has 247 people, of whom six still have the unnamed placeholder records from the earlier diagrams.
+
+The ten generation-four families are children of Bhanumathy and Bhaskaran Nair. The PDF supplies two generation-seven children, Adharv and Aditya, under Arunlal and Renjitha. Each imported member stores the PDF page, numbered entry, stated family, and original relationship wording for provenance. Same-name people are not merged across branches or households. In particular, the Sreekalas married to Vinod and Pradeep are separate records, and B. Velayudhan Thampi (generation four) is not his generation-two ancestor Velayudhan Thampi.
+
+“Optional Member Details” means voluntary blank contact and biographical fields. It does not exclude the named people or relationships. All connected entries are imported; blank contact, address, education, occupation, and date fields are not converted into values.
+
+**User-confirmed correction:** Family 04 page 6 pairs Sunitha with Harikumar, and their son Vivek Krishnan’s entry confirms this. Harikumar’s numbered entry 44 on page 23 mistakenly says Family 05 and spouse of Dr Deepthi K. S. The user explicitly finalized **Sunitha + Harikumar** and **Dr. Deepthi K. S. + S. Sreekumar**. These final couples are recorded without an unresolved warning, and the superseded PDF text is retained in correction provenance.
+
+**Confirmed no children:** Family 03 explicitly states that B. Karthiyani Pillai Thankachi (Remani) and Balakrishnan Nair had no children. Their union has `childrenStatus: confirmed-none`. The tree and profiles show this explicitly, while other empty descendant lists continue to mean not yet recorded.
