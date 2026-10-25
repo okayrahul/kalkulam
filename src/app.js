@@ -3,13 +3,14 @@ import {layoutTree,edgePath,nodeForPerson,PERSON_WIDTH,PERSON_HEIGHT,SPOUSE_GAP}
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const short=id=>people[id].name.replace(/^K\. /,'').replace(/ Thankachi$/,'');
-const initials=id=>people[id].name.replace(/^(Dr\.|Capt\.)\s*/,'').split(/\s+/).filter(w=>w.length>1&&!w.endsWith('.')).slice(0,2).map(w=>w[0]).join('');
+const initials=id=>people[id].placeholder?'?':people[id].name.replace(/^(Dr\.|Capt\.)\s*/,'').split(/\s+/).filter(w=>w.length>1&&!w.endsWith('.')).slice(0,2).map(w=>w[0]).join('');
 const viewport=$('tree-viewport'),world=$('tree-world');
 let root='kumarapilla',expanded=new Set([root]),highlight=null,layout,version=0,visibleKey='',queued=false,transform={x:0,y:0,scale:.8};
 let query='',returnHash='',lastWidth=0;
 const total=Object.keys(people).length;
+$('archive-count').textContent=String(total);
 $('branch-select').innerHTML+='<optgroup label="The eleven founding branches">'+branchIds.map((id,i)=>`<option value="${id}">${String(i+1).padStart(2,'0')} · ${esc(people[id].name)}</option>`).join('')+'</optgroup>';
-$('branch-shortcuts').innerHTML=branchIds.map((id,i)=>`<button data-focus="${id}" class="${id==='vishwanathan'?'has-records':''}"><span>${String(i+1).padStart(2,'0')}</span>${esc(short(id))}${childrenFor(id).length?'<i>↗</i>':''}</button>`).join('');
+$('branch-shortcuts').innerHTML=branchIds.map((id,i)=>`<button data-focus="${id}" class="${childrenFor(id).length?'has-records':''}"><span>${String(i+1).padStart(2,'0')}</span>${esc(short(id))}${childrenFor(id).length?'<i>↗</i>':''}</button>`).join('');
 function setStatus(text){$('tree-status').textContent=text;}
 function treeHash(){return `#tree=${root}${highlight?'&focus='+highlight:''}`;}
 function saveTreeHash(){history.replaceState(null,'',treeHash());}
@@ -37,7 +38,7 @@ function renderTree({camera='readable',anchor=null}={}){
 }
 function personCard(id,index,node){
  const p=people[id],selected=highlight===id,isMain=index===0;
- return `<button class="person-card ${isMain?'descendant-card':'spouse-card'} ${node.depth===0?'founding-card':''} ${selected?'person-highlight':''}" data-person="${id}" style="left:${index*(PERSON_WIDTH+SPOUSE_GAP)}px" aria-label="View ${esc(p.name)} details"><span class="person-meta"><span>${isMain?'GENERATION '+String(p.generation).padStart(2,'0'):'MARRIED TO'}</span><span class="person-initials" aria-hidden="true">${initials(id)}</span></span><strong>${esc(p.name)}</strong>${p.place?`<span class="person-place">⌖ ${esc(p.place)}</span>`:p.deceased?'<span class="person-place">In remembrance</span>':''}</button>`;
+ return `<button class="person-card ${isMain?'descendant-card':'spouse-card'} ${node.depth===0?'founding-card':''} ${selected?'person-highlight':''}" data-person="${id}" style="left:${index*(PERSON_WIDTH+SPOUSE_GAP)}px" aria-label="View ${esc(p.name)} details"><span class="person-meta"><span>${isMain?'GENERATION '+String(p.generation).padStart(2,'0'):'MARRIED TO'}</span>${p.photo?`<img class="person-photo" src="${esc(p.photo)}" alt="" loading="lazy" width="28" height="36">`:`<span class="person-initials" aria-hidden="true">${initials(id)}</span>`}</span><strong>${esc(p.name)}</strong>${p.placeholder?'<span class="person-place">Name not recorded</span>':p.sourceNotes?'<span class="person-place source-flag">Source spelling to confirm</span>':p.place?`<span class="person-place">⌖ ${esc(p.place)}</span>`:p.deceased?'<span class="person-place">In remembrance</span>':''}</button>`;
 }
 function groupMarkup(node){
  const children=childrenFor(node.id),open=expanded.has(node.id),special=node.id==='vishwanathan';
@@ -92,11 +93,12 @@ $('branch-select').onchange=e=>showFamily(e.target.value);
 $('dismiss-hint').onclick=()=>$('canvas-intro').hidden=true;
 $('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('tree-shell').requestFullscreen();}catch{setStatus('Full screen is unavailable in this browser. You can still pan and zoom the tree.');}};
 document.addEventListener('fullscreenchange',()=>{$('fullscreen').setAttribute('aria-label',document.fullscreenElement?'Exit full screen':'Expand family tree to full screen');});
+function searchContext(id){const parents=parentsFor(id),spouses=spousesFor(id);return parents.length?'Child of '+parents.map(p=>people[p].name).join(' & '):spouses.length?'Partner of '+spouses.map(p=>people[p].name).join(', '):'Founding generation';}
 function renderSearch(){
  const ids=query?searchPeople(query):[];
  $('search-results').hidden=!query;$('search').setAttribute('aria-expanded',String(!!query));
  if(!query)return;
- $('search-results').innerHTML=`<p class="search-count">${ids.length} ${ids.length===1?'connection':'connections'} found</p>`+(ids.length?ids.slice(0,20).map(id=>`<button data-locate="${id}"><span class="search-avatar">${initials(id)}</span><span><strong>${esc(people[id].name)}</strong><small>Generation ${people[id].generation}${branchFor(id)?' · '+esc(short(branchFor(id)))+' branch':''}</small></span><i>↗</i></button>`).join('')+(ids.length>20?'<p class="search-count">Keep typing to narrow the results.</p>':''):'<p class="search-no-results">Try a shorter name, an alternate name, or a place.</p>');
+ $('search-results').innerHTML=`<p class="search-count">${ids.length} ${ids.length===1?'connection':'connections'} found</p>`+(ids.length?ids.slice(0,20).map(id=>`<button data-locate="${id}"><span class="search-avatar">${initials(id)}</span><span><strong>${esc(people[id].name)}</strong><small>Generation ${people[id].generation}${branchFor(id)?' · '+esc(short(branchFor(id)))+' branch':''}</small><small>${esc(searchContext(id))}</small></span><i>↗</i></button>`).join('')+(ids.length>20?'<p class="search-count">Keep typing to narrow the results.</p>':''):'<p class="search-no-results">Try a shorter name, an alternate name, or a place.</p>');
 }
 $('search').addEventListener('input',e=>{query=e.target.value.trim();renderSearch();});
 $('search').addEventListener('focus',()=>{if(query)renderSearch();});
@@ -106,7 +108,7 @@ function openPerson(id,{hash=true}={}){
  if(!people[id])return;
  if(!$('person-dialog').open)returnHash=treeHash();
  const p=people[id],children=childrenFor(id),parents=parentsFor(id),spouses=spousesFor(id),branch=branchFor(id);
- $('person-content').innerHTML=`<div class="avatar profile-avatar">${initials(id)}</div><p class="eyebrow">GENERATION ${String(p.generation).padStart(2,'0')}${p.deceased?' · REMEMBERED':''}</p><h2 id="person-title">${esc(p.name)}</h2>${p.aliases?.length?`<p>Also recorded as ${p.aliases.map(esc).join(', ')}</p>`:''}${p.place?`<p class="place">${esc(p.place)}</p>`:''}${p.note?`<p>${esc(p.note)}</p>`:''}<p class="source-note">${branch?`<button class="subtle-button" data-profile-focus="${branch}">${esc(short(branch))} branch</button>`:'Our founding generation'}${!parents.length&&p.generation>1?' · Connected through marriage':''}</p><div class="profile-relations">${relatives('PARENTS',parents)}${relatives('MARRIED TO',spouses)}${relatives(`${children.length} RECORDED CHILDREN`,children)}</div>${children.length?'':`<div class="profile-empty"><strong>There is more to this story.</strong><p>Descendants have not been added to this part of the archive yet.</p></div>`}<div class="profile-actions"><button class="solid-button" id="profile-explore">Explore this family</button><button class="subtle-button" id="profile-locate">Locate in tree</button><button class="subtle-button" id="copy-link">Copy link</button></div><p id="copy-status" class="copy-status" aria-live="polite"></p>`;
+ $('person-content').innerHTML=`${p.photo?`<img class="profile-photo" src="${esc(p.photo)}" alt="Portrait of ${esc(p.name)}" width="70" height="90">`:`<div class="avatar profile-avatar">${initials(id)}</div>`}<p class="eyebrow">GENERATION ${String(p.generation).padStart(2,'0')}${p.deceased?' · REMEMBERED':''}${p.placeholder?' · NAME NOT RECORDED':''}</p><h2 id="person-title">${esc(p.name)}</h2>${p.aliases?.length?`<p>Also recorded as ${p.aliases.map(esc).join(', ')}</p>`:''}${p.place?`<p class="place">${esc(p.place)}</p>`:''}${p.note?`<p>${esc(p.note)}</p>`:''}${p.sourceNotes?`<div class="record-note"><strong>Source spelling to confirm</strong>${p.sourceNotes.map(n=>`<p>${esc(n)}</p>`).join('')}</div>`:''}<p class="source-note">${branch?`<button class="subtle-button" data-profile-focus="${branch}">${esc(short(branch))} branch</button>`:'Our founding generation'}${!parents.length&&p.generation>1?' · Connected through marriage':''}</p><div class="profile-relations">${relatives('PARENTS',parents)}${relatives('MARRIED TO',spouses)}${relatives(`${children.length} RECORDED CHILDREN`,children)}</div>${children.length?'':`<div class="profile-empty"><strong>There is more to this story.</strong><p>Descendants have not been added to this part of the archive yet.</p></div>`}<div class="profile-actions"><button class="solid-button" id="profile-explore">Explore this family</button><button class="subtle-button" id="profile-locate">Locate in tree</button><button class="subtle-button" id="copy-link">Copy link</button></div><p id="copy-status" class="copy-status" aria-live="polite"></p>`;
  $('profile-explore').onclick=()=>{$('person-dialog').close();showFamily(id);};
  $('profile-locate').onclick=()=>{$('person-dialog').close();revealPerson(id);};
  $('copy-link').onclick=async()=>{try{await navigator.clipboard.writeText(new URL(`#person=${id}`,location.href).href);$('copy-status').textContent='Family link copied.';}catch{$('copy-status').textContent='Copy this page’s address to share this person.';}};

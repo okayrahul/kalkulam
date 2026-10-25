@@ -2,7 +2,7 @@
 
 [Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-The archive contains **86 people across six generations**: the founding couple, eleven branches, and the newly transcribed Arumanai family of K. Vishwanathan Thampi and Ananda Valliyamma.
+The archive contains **149 people across six generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Ananda Valliyamma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi.
 
 ## Explore
 
@@ -44,8 +44,22 @@ The initial eight diagrams identify the founding couple and eleven branches. The
 
 Saritha is the only supplied parent of Aadhithya and Advaith. No partner is assumed. The source's Anandavalli Amma spelling is retained as an alias of the existing Ananda Valliyamma record. Valliyamma follows the founding diagram, with Viliyamma retained as a search alias. Kamalamma's alternate name Parvathi Pilla Thankachi is also retained.
 
-Branch numbers and sibling order reflect source presentation, not confirmed birth order. Empty child lists mean descendants have not yet been recorded. Only Kamalamma and Velayudhan are marked deceased because the initial source explicitly says “late.” No dates or other family relationships are inferred.
+Branch numbers and sibling order reflect source presentation, not confirmed birth order. Empty child lists mean descendants have not yet been recorded. Deceased status is recorded only where a supplied diagram explicitly says “late.” No dates or other family relationships are inferred.
 
 ## Validation
 
 `node --test` covers the eleven founding branches, source-specific parent assignments, reciprocal marriages, six-generation ancestry paths, descendant and spouse search, missing references and cycles, expanding and collapsing branches, non-overlapping layout, child-connector targets, and the layout budget. Desktop and mobile browser QA covers branch navigation, expansion, search, person details, zoom, and deep links.
+
+## Poojapura and Poovangaparambu additions
+
+The two new diagrams add **63 people**, bringing the archive to 149 records: 143 named people and six unnamed relatives with explicit relationships. Thanuvan’s branch adds 55 people (35 descendants and 20 spouses); Sukumaran’s branch adds eight (six descendants and two spouses). The supplied portraits of Thanuvan and Lekshmi Kunjamma are extracted into `assets/` and retained without synthetic enhancement. `npm run build` includes them.
+
+The user confirmed **Thanuvan Thampi** and **Lekshmi Kunjamma** as the correct names. Their existing IDs remain stable, and the earlier labels Tanuvan Thampi and Lekshmi Kutty remain searchable.
+
+**Source discrepancy:** the new Poovangaparambu diagram says K. Sumaran Thampi, while the earlier source says K. Sukumaran Thampi. Place and spouse agree. The earlier displayed spelling is retained, the new spelling is searchable, and the profile explicitly flags the unresolved spelling.
+
+**Omitted by user instruction:** Dr. Renju is an unconnected box in the supplied image. No person or marriage record has been added for Renju pending clarification. The connector from Dr. Suresh Kumar and Sreelatha identifies Dr. Praveen Kumar and Ayappadas as children. Syamala Kumari and Dr. Ramankutty have Ratheesh and Dr. Rajesh.
+
+**Unnamed records:** Devi’s spouse, Rohith’s spouse, Kalyani’s spouse, Manoj and Beth’s unnamed daughter, and two unnamed sons of Shankar and Anita. These six records have distinct stable IDs and explicit placeholder labels, not invented names or birth order. The spouses and children are attached only to the families shown.
+
+**Repeated names:** Gopinathan Nair in the Ambika family remains separate from the Gopinathan Nair married to Sreekumari in the Arumanai branch. The two Anitas, two Adityas, and Gayatri/Gayathri also have separate records. Search now displays parents or partners to distinguish them. No cross-branch identity merges are assumed. Employment, education, residence, and student descriptions are retained as source notes, not verified current statuses.
