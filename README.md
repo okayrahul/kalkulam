@@ -2,7 +2,7 @@
 
 [Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-The archive contains **408 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankanchy and R. Madhavan Pillai.
+The archive contains **408 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
 
 ## Explore
 
@@ -81,6 +81,6 @@ The ten generation-four families are children of Bhanumathy and Bhaskaran Nair. 
 
 The supplied 12-page scanned Arappura-2026 PDF adds **161 people** and **57 unions** to the existing Sharada founding branch. The archive now contains **408 people** across seven generations. Sharada and R. Madhavan Pillai have thirteen recorded children (ten daughters and three sons). The branch contains 162 people including the existing Sharada record. All names, honorifics, deceased labels, occupations, education notes, and **104 mobile entries** are transcribed from the complete rendered pages. Pages that continue a person or household onto the next page are kept connected (Archana/Viplab, Radha, Gopika/Sajilal, Aadityakumar's son Saathvik, and Ramadas's children). Each new record retains its PDF page and numbered family for provenance.
 
-The user corrected the existing name to **V. Sharada Thankanchy**, using the PDF's surname spelling, and **Anandavalli Amma** as Viswanathan Thampi's wife. Existing IDs and incoming links remain stable; prior labels are search aliases. Sarada P Nair in Family 1 remains spelled Sarada, exactly as the new PDF prints her distinct name.
+The user corrected the existing name to **V. Sharada Thankachy**, using the PDF's surname spelling, and **Anandavalli Amma** as Viswanathan Thampi's wife. Existing IDs and incoming links remain stable; prior labels are search aliases. Sarada P Nair in Family 1 remains spelled Sarada, exactly as the new PDF prints her distinct name.
 
 Phone numbers appear only on expanded profiles as tap-to-call links. Display strings retain the source's spaces, plus signs, and leading zeros; no country codes or missing values are guessed. The PDF repeats the same number for Sabarinath/Arathi, Akshay/Sanjana, and five members of the Parulekar household; those repeated values are preserved. Jayalakshmi and Madhavan Nair have similar but different numbers, 9946356709 and 9846356709 respectively, and are not conflated. Occupation/student descriptions are dated source information, not assertions about current employment. The supplied founder portraits are cropped faithfully into assets.
