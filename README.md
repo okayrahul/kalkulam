@@ -1,10 +1,20 @@
 # Kalkulam family atlas
 
-A responsive family archive beginning with Kalkulam T. Kumarapilla and Valliyamma Pilla Thankachi, their eleven children, and the six spouses shown in the supplied family diagrams.
+[Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-## Run locally
+The archive contains **86 people across six generations**: the founding couple, eleven branches, and the newly transcribed Arumanai family of K. Vishwanathan Thampi and Ananda Valliyamma.
 
-Requires Node.js 22 or newer. No dependencies or install step.
+## Explore
+
+The primary view is a connected family flowchart. A double-ended arrow joins spouses; a descending line lands on the actual child. Open a family's `+` control to reveal its children without replacing the surrounding tree. Use the focus control to explore one family, breadcrumbs to return to ancestors, and the overview map to navigate large branches. `Show whole branch` opens all recorded descendants in the current branch.
+
+Drag to pan, pinch to zoom on touch screens, or use Ctrl + wheel to zoom. When the canvas is focused, arrow keys pan, `+` / `-` zoom, and `Home` restores a readable view. The full-screen control provides more room. Search locates any recorded person, including later generations and spouses, and opens the ancestral path to them. Press `/` to jump to search.
+
+Shareable person links use `#person=ID`. Tree links use `#tree=ID&focus=ID` to reopen a branch and locate a person. Unknown links safely fall back to the founding tree.
+
+## Run and publish
+
+Requires Node.js 22 or newer. No package installation is required.
 
 ```
 npm run dev
@@ -12,30 +22,30 @@ npm test
 npm run build
 ```
 
-Open http://127.0.0.1:4173. Build copies deployable assets into `dist/`; GitHub Pages serves the same static files directly from the repository root on `main`. `.nojekyll` disables Jekyll processing. Relative asset paths support GitHub project URLs.
+Open http://localhost:4173. The optional build copies static assets into `dist/`. GitHub Pages serves the repository root on `main`; every update to `main` publishes automatically. `.nojekyll` disables Jekyll processing, and relative asset paths support the repository's Pages URL.
 
-## Add generations
+## Add records
 
-Edit `src/family.js`. Give every person a stable unique ID in `people`. Add a family entry with its `partners` and `children` IDs. A person can participate in multiple unions; parents and spouses remain separate. Set generation, aliases, place, and notes only from confirmed records. Run `npm test` before committing. Every commit to `main` is published by GitHub Pages.
+Edit `src/family.js`. Each person has a stable unique ID, name, and generation, with optional aliases, place, notes, and deceased status. Families explicitly list parent/partner IDs and child IDs. Single-parent records are supported; no spouse is invented when one is absent from a source.
 
-```
-people.newPerson = {name: 'Confirmed name', generation: 3};
-// Add 'newPerson' to the relevant family's children array.
-// Add another union when this person has a recorded partner or children.
-```
+Add the person to `people`, add their ID to the correct family's `children`, and add another family record when their own spouse or children are known. Run `npm test` before publishing. The eleven founding branch IDs stay stable so later generations remain connected to their original branch.
 
-The archive validates references, duplicate children, and ancestry cycles. Relationship indexes avoid repeatedly scanning all families. Branch navigation renders the immediate family of a selected person, so deeper generations do not all load into the tree canvas at once. Search covers people, aliases, notes, and places. Person links use `#person=ID` and work without a server router.
+Names, parents, and marriages are distinct. For example, `sreekumari` is Vishwanathan's daughter married to Gopinathan Nair; `sreekumariAjith` is Dr. Sreekumari Ajith Kumar, married to Ajith Kumar Padmanabhan Nair. These are separate people.
 
-The eleven founding branches are the initial directory. As the archive grows substantially, move records into per-branch JSON chunks, load the selected branch on demand, add a compact search index, and paginate large immediate families. Current canvas rendering is bounded by generation, not by number of siblings; extreme sibling counts will require viewport virtualization. The app has no backend and stores no visitor data.
+## Rendering and growth
 
-## Source and transcription
+`src/tree-layout.js` measures expanded subtrees and assigns non-overlapping positions to couples. Collapsed descendants do not enter the layout. The DOM renders only nodes near the viewport; offscreen cards are removed while a small overview map preserves the complete visible-tree context. An explicit 1,200-family layout budget prevents runaway expansions and prompts the visitor to focus a smaller branch. The camera preserves the expanded family's screen position, and search can reveal deep ancestors without opening every sibling subtree.
 
-Only the relationships supplied in the eight original diagrams are recorded. The spouse arrow means marriage; descending arrows identify children. The branch order follows the supplied images and is **not confirmed birth order**. Empty child lists mean descendants have not yet been entered, not that there were no children. Spouses without supplied parents are not assigned the founders as parents. Only Kamalamma and Velayudhan are marked deceased because the source explicitly says “late.”
+Relationship indexes avoid repeatedly scanning all families. The data validator catches missing references, duplicate children, duplicate family IDs, and ancestry cycles. Records are currently a small static module. For a substantially larger archive, the next data step is per-branch loading and a compact search index; the rendering already supports bounded exploration. There is no backend or visitor-data storage.
 
-The founder spelling Valliyamma follows the diagram; Viliyamma is preserved as a searchable alternate spelling from the request. Kamalamma's alternate name Parvathi Pilla Thankachi is preserved. No dates or descendants have been invented.
+## Transcription notes
 
-GitHub Pages publishes the recorded family information publicly. Add only information intended for that public archive. For any future living-person records, decide the family's publication policy before adding personal details.
+The initial eight diagrams identify the founding couple and eleven branches. The additional Vishwanathan/Arumanai diagram adds **67 people**, including **44 direct descendants and 23 spouses**, through generation six. Its six first children are Chandrika, Sreekumari, Harikumaran Thampi, Geetha Kumari, Gopakumaran Thampi, and V. Satheesh Kumar. K. Padmanabhan Nair, Gopinathan Nair, and Vijayakumar are spouses, not children of Vishwanathan.
 
-## Verification
+Saritha is the only supplied parent of Aadhithya and Advaith. No partner is assumed. The source's Anandavalli Amma spelling is retained as an alias of the existing Ananda Valliyamma record. Valliyamma follows the founding diagram, with Viliyamma retained as a search alias. Kamalamma's alternate name Parvathi Pilla Thankachi is also retained.
 
-`node --test` checks all eleven branches, reciprocal marriages, search by spouse and alias, missing references, cycles, and adding a third generation. The interface supports keyboard navigation, labeled dialogs, reduced motion, responsive cards, native modal focus handling, and keyboard canvas pan/zoom.
+Branch numbers and sibling order reflect source presentation, not confirmed birth order. Empty child lists mean descendants have not yet been recorded. Only Kamalamma and Velayudhan are marked deceased because the initial source explicitly says “late.” No dates or other family relationships are inferred.
+
+## Validation
+
+`node --test` covers the eleven founding branches, source-specific parent assignments, reciprocal marriages, six-generation ancestry paths, descendant and spouse search, missing references and cycles, expanding and collapsing branches, non-overlapping layout, child-connector targets, and the layout budget. Desktop and mobile browser QA covers branch navigation, expansion, search, person details, zoom, and deep links.
