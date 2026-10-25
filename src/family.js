@@ -1,3 +1,4 @@
+import {arappuraPeople,arappuraFamilies} from './arappura.js';
 // Stable IDs and explicit family unions allow any number of generations and marriages.
 export const people = {
   kumarapilla: {name:'Kalkulam T. Kumarapilla', generation:1},
@@ -7,7 +8,7 @@ export const people = {
   parameshwaran: {name:'K. Parameshwaran Thampi', generation:2, place:'Pullu'},
   pankajakshi: {name:'Pankajakshi Amma', generation:2},
   vishwanathan: {name:'K. Vishwanathan Thampi', generation:2, place:'Arumanai'},
-  ananda: {name:'Ananda Valliyamma', generation:2, aliases:['Anandavalli Amma']},
+  ananda: {name:'Anandavalli Amma', generation:2, aliases:['Ananda Valliyamma']},
   sukumaran: {name:'K. Sukumaran Thampi', generation:2, place:'Poovangaparambu', aliases:['K. Sumaran Thampi'], sourceNotes:['The new diagram spells this name K. Sumaran Thampi; the earlier diagram spells it K. Sukumaran Thampi. The place and spouse match. The preferred spelling remains to be confirmed.']},
   saraswathi: {name:'L. K. Saraswathi', generation:2},
   kamalamma: {name:'V. Kamalamma Thankachi', generation:2, place:'Thuckalay', aliases:['Parvathi Pilla Thankachi'], deceased:true},
@@ -15,7 +16,7 @@ export const people = {
   thankamma: {name:'V. Thankamma Thankachi', generation:2, place:'Eraniel'},
   kanakamma: {name:'Kanakamma Thankachi', generation:2, place:'Nagercoil'},
   rajamma: {name:'Rajamma Thankachi', generation:2, place:'Sasthamangalam'},
-  sarada: {name:'V. Sarada Thankachi', generation:2, place:'Arappuraveedu, Thampanoor'},
+  sarada: {name:'V. Sharada Thankachy', generation:2, aliases:['V. Sarada Thankachi'], honorific:'Smt.', place:'Arappuraveedu, Thampanoor', deceased:true, photo:'./assets/sharada.jpg', source:{document:'Arappura-2026.pdf',page:1}},
   omana: {name:'Omana Thankachi', generation:2, place:'Kulasekaram'},
   sarojini: {name:'V. Sarojini Thankachi', generation:2, place:'Lekshmi Nilayam, Puthukkotta Lane, Bapuji Nagar'},
   krishnan: {name:'L. K. Krishnan Nair', generation:2, place:'Lekshmi Nilayam, Puthukottah Lane, Pongummoodu'},
@@ -247,6 +248,7 @@ export const people = {
   k94: {"name":"Vineed C. S.","generation":5,"source":{"document":"Kodavilakom_Family_Tree.pdf","page":36,"member":94,"family":10,"relationship":"Spouse of Parvathi Thampi P. S."}},
   k95: {"name":"Dhanwanth Sruthi Ashwin","generation":6,"source":{"document":"Kodavilakom_Family_Tree.pdf","page":36,"member":95,"family":10,"relationship":"Child of Sruthi Thampi P. S. + Ashwin A. S."}},
   k96: {"name":"Devanandan P. Vineed","generation":6,"source":{"document":"Kodavilakom_Family_Tree.pdf","page":37,"member":96,"family":10,"relationship":"Child of Parvathi Thampi P. S. + Vineed C. S."}},
+  ...arappuraPeople,
 };
 export const branchIds = ['tanuvan','parameshwaran','vishwanathan','sukumaran','kamalamma','thankamma','kanakamma','rajamma','sarada','omana','sarojini'];
 export const families = [
@@ -337,6 +339,7 @@ export const families = [
   {"id":"kodavilakom-k89-family","partners":["k89","k90"],"children":["k91","k93"]},
   {"id":"kodavilakom-k91-family","partners":["k91","k92"],"children":["k95"]},
   {"id":"kodavilakom-k93-family","partners":["k93","k94"],"children":["k96"]},
+  ...arappuraFamilies,
 ];
 export function validateData(records=people, unions=families) {
   const ids=new Set();
@@ -368,7 +371,7 @@ export function ancestryPath(id) {
 }
 export function bloodRelative(id){if(parentsFor(id).length||people[id]?.generation===1)return id;return spousesFor(id).find(s=>parentsFor(s).length)||id;}
 export function branchFor(id){return ancestryPath(bloodRelative(id)).find(p=>branchIds.includes(p));}
-const searchText = new Map(Object.entries(people).map(([id,p])=>[id,[p.name,p.place,p.note,...(p.aliases||[])].filter(Boolean).join(' ').toLocaleLowerCase()]));
+const searchText = new Map(Object.entries(people).map(([id,p])=>[id,[p.name,p.honorific,p.place,p.note,...(p.aliases||[])].filter(Boolean).join(' ').toLocaleLowerCase()]));
 export function searchPeople(query){const terms=query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);return Object.keys(people).filter(id=>terms.every(t=>searchText.get(id).includes(t)));}
 export function searchBranches(query){if(!query.trim())return branchIds;const found=new Set(searchPeople(query).map(branchFor));return branchIds.filter(id=>found.has(id));}
 export function neighborhood(id){return [...new Set([...parentsFor(id),id,...spousesFor(id),...childrenFor(id)])];}
