@@ -68,5 +68,5 @@ test('The expanded Arappura flowchart contains every person without overlapping 
  assert.equal(new Set(tree.nodes.flatMap(n=>n.partners)).size,162);
  assert.equal(tree.truncated,false);
  for(const n of tree.nodes)for(const o of tree.nodes.filter(o=>o.depth===n.depth&&o.x>n.x))assert.ok(n.x+n.ownWidth<=o.x);
- assert.equal(families.length,144);
+ assert.equal(families.length,156);
 });
