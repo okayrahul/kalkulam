@@ -2,7 +2,7 @@
 
 [Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-The archive contains **247 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Ananda Valliyamma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, and the Kodavilakom family descending through V. Kamalamma Thankachi.
+The archive contains **408 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankanchy and R. Madhavan Pillai.
 
 ## Explore
 
@@ -42,7 +42,7 @@ Relationship indexes avoid repeatedly scanning all families. The data validator 
 
 The initial eight diagrams identify the founding couple and eleven branches. The additional Vishwanathan/Arumanai diagram adds **67 people**, including **44 direct descendants and 23 spouses**, through generation six. Its six first children are Chandrika, Sreekumari, Harikumaran Thampi, Geetha Kumari, Gopakumaran Thampi, and V. Satheesh Kumar. K. Padmanabhan Nair, Gopinathan Nair, and Vijayakumar are spouses, not children of Vishwanathan.
 
-Saritha is the only supplied parent of Aadhithya and Advaith. No partner is assumed. The source's Anandavalli Amma spelling is retained as an alias of the existing Ananda Valliyamma record. Valliyamma follows the founding diagram, with Viliyamma retained as a search alias. Kamalamma's alternate name Parvathi Pilla Thankachi is also retained.
+Saritha is the only supplied parent of Aadhithya and Advaith. No partner is assumed. The user finalized Anandavalli Amma as the displayed name; Ananda Valliyamma remains a searchable earlier label. Valliyamma follows the founding diagram, with Viliyamma retained as a search alias. Kamalamma's alternate name Parvathi Pilla Thankachi is also retained.
 
 Branch numbers and sibling order reflect source presentation, not confirmed birth order. Empty child lists mean descendants have not yet been recorded. Deceased status is recorded only where a supplied diagram explicitly says “late.” No dates or other family relationships are inferred.
 
@@ -75,3 +75,12 @@ The ten generation-four families are children of Bhanumathy and Bhaskaran Nair. 
 **User-confirmed correction:** Family 04 page 6 pairs Sunitha with Harikumar, and their son Vivek Krishnan’s entry confirms this. Harikumar’s numbered entry 44 on page 23 mistakenly says Family 05 and spouse of Dr Deepthi K. S. The user explicitly finalized **Sunitha + Harikumar** and **Dr. Deepthi K. S. + S. Sreekumar**. These final couples are recorded without an unresolved warning, and the superseded PDF text is retained in correction provenance.
 
 **Confirmed no children:** Family 03 explicitly states that B. Karthiyani Pillai Thankachi (Remani) and Balakrishnan Nair had no children. Their union has `childrenStatus: confirmed-none`. The tree and profiles show this explicitly, while other empty descendant lists continue to mean not yet recorded.
+
+
+## Arappura address book addition
+
+The supplied 12-page scanned Arappura-2026 PDF adds **161 people** and **57 unions** to the existing Sharada founding branch. The archive now contains **408 people** across seven generations. Sharada and R. Madhavan Pillai have thirteen recorded children (ten daughters and three sons). The branch contains 162 people including the existing Sharada record. All names, honorifics, deceased labels, occupations, education notes, and **104 mobile entries** are transcribed from the complete rendered pages. Pages that continue a person or household onto the next page are kept connected (Archana/Viplab, Radha, Gopika/Sajilal, Aadityakumar's son Saathvik, and Ramadas's children). Each new record retains its PDF page and numbered family for provenance.
+
+The user corrected the existing name to **V. Sharada Thankanchy**, using the PDF's surname spelling, and **Anandavalli Amma** as Viswanathan Thampi's wife. Existing IDs and incoming links remain stable; prior labels are search aliases. Sarada P Nair in Family 1 remains spelled Sarada, exactly as the new PDF prints her distinct name.
+
+Phone numbers appear only on expanded profiles as tap-to-call links. Display strings retain the source's spaces, plus signs, and leading zeros; no country codes or missing values are guessed. The PDF repeats the same number for Sabarinath/Arathi, Akshay/Sanjana, and five members of the Parulekar household; those repeated values are preserved. Jayalakshmi and Madhavan Nair have similar but different numbers, 9946356709 and 9846356709 respectively, and are not conflated. Occupation/student descriptions are dated source information, not assertions about current employment. The supplied founder portraits are cropped faithfully into assets.
