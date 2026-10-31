@@ -106,3 +106,10 @@ The two new Krishna Kumar records are distinct: Rajasree Bhaskar's spouse and Na
 These imports add 71 people in total, bringing the archive to **509 people and 182 unions across seven generations**.
 
 The homepage uses a transparent sibling version of the Family Forum artwork with restrained gilded relief and a CSS drop shadow. The original supplied artwork is preserved in assets/kalkulam-family-forum.png; the displayed version is assets/kalkulam-family-crest.png. It was edited with the built-in image generator, and its actual alpha channel is retained. Desktop and 390px mobile previews confirm that the crest has no white image panel or horizontal overflow.
+
+
+## User-supplied family photographs
+
+Eight supplied photographs attach to sixteen existing members without altering any names or relationships. Chandrika, K. Padmanabhan Nair, S. S. Sundar and Beena Sundar receive individual portraits. Four shared photographs show Vishwanathan and Anandavalli, Sarojini and Krishnan, Arun/Sahana/Avira, and Gauthami/Sundaram's family. Each shared photograph is available from every pictured person's profile and includes captions with links to the other pictured members.
+
+Group photos retain their complete composition using `object-fit: contain`, with a full-size image link. Arun's photo is captioned left to right as Arun, Avira, Sahana. The other family photo follows the user's identification: Gauthami, Akshara, Aditi, Sundaram from left to right, and Aarav below Sundaram. All eight web copies retain the original pixel dimensions; only WebP encoding is applied, with no cropping, retouching, or generated faces. The original supplied files are unchanged. Shared photos are indexed separately from individual portraits so the tree shows a family-photo indicator rather than pretending that a group picture is an individual headshot.
