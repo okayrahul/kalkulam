@@ -104,3 +104,5 @@ DOC-20261031-WA0019.pdf connects the Kulashekaram family to the existing Omana T
 The two new Krishna Kumar records are distinct: Rajasree Bhaskar's spouse and Narayanan Thampi's child married to Saritha. Omana's husband Madhavan Pillai is not Sharada's husband R. Madhavan Pillai. Other repeated names also retain distinct IDs and explicit relationships. All imported Kulashekaram records retain page and relationship provenance, and all Poovangaparambu updates retain the corresponding source page. Existing branch/person links remain stable.
 
 These imports add 71 people in total, bringing the archive to **509 people and 182 unions across seven generations**.
+
+The homepage uses a transparent sibling version of the Family Forum artwork with restrained gilded relief and a CSS drop shadow. The original supplied artwork is preserved in assets/kalkulam-family-forum.png; the displayed version is assets/kalkulam-family-crest.png. It was edited with the built-in image generator, and its actual alpha channel is retained. Desktop and 390px mobile previews confirm that the crest has no white image panel or horizontal overflow.
