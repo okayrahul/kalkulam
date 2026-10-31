@@ -2,7 +2,7 @@
 
 [Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-The archive contains **438 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
+The archive contains **509 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
 
 ## Explore
 
@@ -56,9 +56,9 @@ The two new diagrams add **63 people**, bringing the archive to 149 records: 143
 
 The user confirmed **Thanuvan Thampi** and **Lekshmi Kunjamma** as the correct names. Their existing IDs remain stable, and the earlier labels Tanuvan Thampi and Lekshmi Kutty remain searchable.
 
-**Source discrepancy:** the new Poovangaparambu diagram says K. Sumaran Thampi, while the earlier source says K. Sukumaran Thampi. Place and spouse agree. The earlier displayed spelling is retained, the new spelling is searchable, and the profile explicitly flags the unresolved spelling.
+**Resolved source discrepancy:** an earlier Poovangaparambu diagram said K. Sumaran Thampi. The later supplied Poovangaparambu 10.pdf explicitly confirms K. Sukumaran Thampi (Gopi Thampi). The spelling warning is removed; the earlier label remains a search alias and correction provenance records the resolution.
 
-**Omitted by user instruction:** Dr. Renju is an unconnected box in the supplied image. No person or marriage record has been added for Renju pending clarification. The connector from Dr. Suresh Kumar and Sreelatha identifies Dr. Praveen Kumar and Ayappadas as children. Syamala Kumari and Dr. Ramankutty have Ratheesh and Dr. Rajesh.
+**Initially omitted pending clarification:** Dr. Renju was unconnected in the earlier diagram. The later supplied Poovangaparambu 10.pdf explicitly identifies Dr. P. Renju as the wife of Dr. S. Praveen Kumar, so the record and marriage have now been added. The connector from Dr. Suresh Kumar and Sreelatha identifies Dr. Praveen Kumar and Ayappadas as children. Syamala Kumari and Dr. Ramankutty have Ratheesh and Dr. Rajesh.
 
 **Unnamed records:** Devi’s spouse, Rohith’s spouse, Kalyani’s spouse, Manoj and Beth’s unnamed daughter, and two unnamed sons of Shankar and Anita. These six records have distinct stable IDs and explicit placeholder labels, not invented names or birth order. The spouses and children are attached only to the families shown.
 
@@ -93,3 +93,16 @@ The supplied Sarojini diagram adds **30 people** (18 descendants and 12 spouses)
 Children are assigned according to the descending arrows; marriage arrows identify spouses. In particular, Harikumar A and Archana Shankar are Rema Devi's children; Girish Thampy and Vignesh Thampy are Hema's children; Athira S. and Chithira S. are Dr. Sarojini Sudha's children. Karan and Nirbhay are children of Archana and Col. Shankar Gopinath; Peyasha is Karan's spouse. Sanjana Nair is the child of Harikumar and Parvathi, married to Srinath Nair. Prema and Ramachandran Nair have no descendants supplied in this diagram; this does not imply confirmed childlessness.
 
 Source spellings including Thampy, Peyasha, Amarys Praveen, and Harikumar A are preserved. No family member is merged with a similarly named person in an earlier branch. No phone numbers or deceased statuses are supplied by this diagram.
+
+
+## October 31 PDF updates
+
+Poovangaparambu 10.pdf enriches the existing Sukumaran branch without duplicating any of its ten earlier people. Full names, initials, titles, Gopi Thampi's alias, Manipal/Nagercoil places, occupations and the founder's former Legislative Council membership are retained. Eight new records add Dr. M. Sunitha, Dr. P. Renju, Dr. C. Lakshmi, Siddarth, Kalidas, Adv. R. Ananthesh, P.R. Gayatri and A.L. Sai Arjun. The branch now contains 18 people and reaches generation five. Rathish and Ayyappadas follow the new PDF's spelling; earlier labels remain searchable. Rathish has two explicitly recorded children with no spouse supplied, so no spouse is invented. The existing Sarojini/Arappura phone data remains unchanged; neither new PDF supplies phone numbers. Four individual portraits are extracted faithfully from the two supplied couple photographs, including the founding ancestors.
+
+DOC-20261031-WA0019.pdf connects the Kulashekaram family to the existing Omana Thankachi founding branch. It adds 63 people and 22 unions, including Omana's husband Madhavan Pillai and their seven children: Vijayamma Thankachi, Narayanan Thampi, Leela Thankachi, Padma Nair, Vasantha Nair, Mohan Kumar and Usha Nair. The complete Omana branch has 64 people, including spouses, through generation six. Its 42 descendants plus Omana account for the source's headline count of 43; that caption excludes spouses and the ancestors rather than representing every box. Beena has no supplied descendants or spouse. Anupama's two children, Aryan and Abhay, remain a single-parent family because no spouse is shown.
+
+The two new Krishna Kumar records are distinct: Rajasree Bhaskar's spouse and Narayanan Thampi's child married to Saritha. Omana's husband Madhavan Pillai is not Sharada's husband R. Madhavan Pillai. Other repeated names also retain distinct IDs and explicit relationships. All imported Kulashekaram records retain page and relationship provenance, and all Poovangaparambu updates retain the corresponding source page. Existing branch/person links remain stable.
+
+These imports add 71 people in total, bringing the archive to **509 people and 182 unions across seven generations**.
+
+The homepage uses a transparent sibling version of the Family Forum artwork with restrained gilded relief and a CSS drop shadow. The original supplied artwork is preserved in assets/kalkulam-family-forum.png; the displayed version is assets/kalkulam-family-crest.png. It was edited with the built-in image generator, and its actual alpha channel is retained. Desktop and 390px mobile previews confirm that the crest has no white image panel or horizontal overflow.
