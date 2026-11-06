@@ -2,7 +2,7 @@
 
 [Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-The archive contains **509 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
+The archive contains **541 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
 
 ## Explore
 
@@ -113,3 +113,9 @@ The homepage uses a transparent sibling version of the Family Forum artwork with
 Eight supplied photographs attach to sixteen existing members without altering any names or relationships. Chandrika, K. Padmanabhan Nair, S. S. Sundar and Beena Sundar receive individual portraits. Four shared photographs show Vishwanathan and Anandavalli, Sarojini and Krishnan, Arun/Sahana/Avira, and Gauthami/Sundaram's family. Each shared photograph is available from every pictured person's profile and includes captions with links to the other pictured members.
 
 Group photos retain their complete composition using `object-fit: contain`, with a full-size image link. Arun's photo is captioned left to right as Arun, Avira, Sahana. The other family photo follows the user's identification: Gauthami, Akshara, Aditi, Sundaram from left to right, and Aarav below Sundaram. All eight web copies retain the original pixel dimensions; only WebP encoding is applied, with no cropping, retouching, or generated faces. The original supplied files are unchanged. Shared photos are indexed separately from individual portraits so the tree shows a family-photo indicator rather than pretending that a group picture is an individual headshot.
+
+## Rajamma blueprint update
+
+Kalkulam_Family_Tree_v5.pdf adds 32 people and 12 unions under the existing Rajamma Thankachi record, bringing the archive to 541 people and 194 unions. The complete Rajamma branch contains 33 people through generation six. The PDF's label V. Rajamma Thankachy is a searchable alias; existing names and links are retained. Her spouse M. Thanu Pillai and daughter R. Ratnamma Thankachy connect the four generation-four lines: R. Padmaja Thankachy, Vijayakumar S., S. Mohanakumaran Thampy, and R. Girija Thampy. All connected spouses and descendants are included, with page and relationship provenance and the source's occupation wording. Girija has no supplied spouse, so her son Vivek has only that recorded parent.
+
+The blueprint repeats a family similar to the existing Sarojini family: Vijayakumar S. + Hema S., Girish/Lakshmi, Vignesh/Surya, Gaurav, Navami and Heera. The user provisionally identified Vijayakumar S. as different. These nine records remain separate from Vijayakumaran Thampy S and Hema Vijayakumar's existing family; no parentage or generation is overwritten. A visible note on the new Vijayakumar profile records the possible identity overlap. The source's generation-four/five/six placement is preserved in the new branch. No phone numbers, dates, missing partners or deceased statuses are inferred.

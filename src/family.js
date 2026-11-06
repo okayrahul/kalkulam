@@ -1,3 +1,4 @@
+import {rajammaPeople,rajammaFamilies} from './rajamma.js';
 import {kulashekaramPeople,kulashekaramFamilies} from './kulashekaram.js';
 import {arappuraPeople,arappuraFamilies} from './arappura.js';
 // Stable IDs and explicit family unions allow any number of generations and marriages.
@@ -16,7 +17,7 @@ export const people = {
   velayudhan: {name:'Velayudhan Thampi', generation:2, deceased:true},
   thankamma: {name:'V. Thankamma Thankachi', generation:2, place:'Eraniel'},
   kanakamma: {name:'Kanakamma Thankachi', generation:2, place:'Nagercoil'},
-  rajamma: {name:'Rajamma Thankachi', generation:2, place:'Sasthamangalam'},
+  rajamma: {name:'Rajamma Thankachi', generation:2, place:'Sasthamangalam', aliases:['V. Rajamma Thankachy'], source:{document:'Kalkulam_Family_Tree_v5.pdf',page:1}},
   sarada: {name:'V. Sharada Thankachy', generation:2, aliases:['V. Sarada Thankachi'], honorific:'Smt.', place:'Arappuraveedu, Thampanoor', deceased:true, photo:'./assets/sharada.jpg', source:{document:'Arappura-2026.pdf',page:1}},
   omana: {name:'Omana Thankachi', generation:2, place:'Kulasekaram'},
   sarojini: {name:'V. Sarojini Thankachi', generation:2, place:'Lekshmi Nilayam, Puthukkotta Lane, Bapuji Nagar'},
@@ -287,11 +288,13 @@ export const people = {
   pAnanthesh: {"name": "Adv. R. Ananthesh", "generation": 5, "note": "Legal Associate, Shardul Amarchand Mangaldas, New Delhi", "source": {"document": "Poovangaparambu 10.pdf", "page": 2, "relationship": "Child of Dr. R. Rajesh"}},
   pGayatri: {"name": "P.R. Gayatri", "generation": 5, "source": {"document": "Poovangaparambu 10.pdf", "page": 2, "relationship": "Child of Dr. S. Praveen Kumar"}},
   pSaiArjun: {"name": "A.L. Sai Arjun", "generation": 5, "source": {"document": "Poovangaparambu 10.pdf", "page": 2, "relationship": "Child of Adv. S. Ayyappadas"}},
+  ...rajammaPeople,
   ...kulashekaramPeople,
   ...arappuraPeople,
 };
 export const branchIds = ['tanuvan','parameshwaran','vishwanathan','sukumaran','kamalamma','thankamma','kanakamma','rajamma','sarada','omana','sarojini'];
 export const families = [
+  ...rajammaFamilies,
   {id:'founders', partners:['kumarapilla','valliyamma'], children:branchIds},
   {id:'tanuvan-family', partners:['tanuvan','lekshmi'], children:['tRamachandran','tRathnamma','tAmbika','tIndira','tNirmala','tJaya','tChandrashekar']},
   {id:'parameshwaran-family', partners:['parameshwaran','pankajakshi'], children:[]},

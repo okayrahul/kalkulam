@@ -10,7 +10,7 @@ test('The new individual portraits attach to existing people without renaming th
   assert.equal(people[id].photo,'./assets/photos/'+file+'.webp');
   assert.ok(existsSync(new URL('../'+people[id].photo,import.meta.url)));
  }
- assert.equal(Object.keys(people).length,509);
+ assert.equal(Object.keys(people).length,541);
 });
 
 test('Both ancestor couple photos appear on each spouse profile in the pictured order',()=>{
