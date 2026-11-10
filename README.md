@@ -2,7 +2,7 @@
 
 [Explore the live family tree](https://okayrahul.github.io/kalkulam/).
 
-The archive contains **541 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
+The archive contains **643 people across seven generations**: the founding couple, eleven branches, and the Arumanai family of K. Vishwanathan Thampi and Anandavalli Amma, the Poojapura family of Thanuvan Thampi and Lekshmi Kunjamma, and the Poovangaparambu family of K. Sukumaran Thampi and L. K. Saraswathi, the Kodavilakom family descending through V. Kamalamma Thankachi, and the Arappura family of V. Sharada Thankachy and R. Madhavan Pillai.
 
 ## Explore
 

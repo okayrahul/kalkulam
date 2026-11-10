@@ -31,7 +31,7 @@ function renderTree({camera='readable',anchor=null}={}){
  layout=layoutTree(root,expanded);version++;visibleKey='';
  world.style.width=layout.width+'px';world.style.height=layout.height+'px';
  const svg=$('tree-links');svg.setAttribute('width',layout.width);svg.setAttribute('height',layout.height);
- svg.innerHTML=`<defs><marker id="child-arrow" orient="auto" markerWidth="7" markerHeight="7" refX="5" refY="3"><path d="M1 1 L5 3 L1 5" fill="none" stroke="#9baf93" stroke-width="1.3"/></marker></defs>${layout.edges.map(e=>`<path class="descent-line" d="${edgePath(e)}" marker-end="url(#child-arrow)"/>`).join('')}`;
+ svg.innerHTML=`<defs><marker id="child-arrow" orient="auto" markerWidth="7" markerHeight="7" refX="5" refY="3"><path d="M1 1 L5 3 L1 5" fill="none" stroke="#9baf93" stroke-width="1.3"/></marker></defs>${layout.edges.map(e=>`<path class="descent-line${e.railOffset?' descent-line-alt':''}" d="${edgePath(e)}" marker-end="url(#child-arrow)"/>`).join('')}`;
  updateBreadcrumbs();
  const count=new Set(layout.nodes.flatMap(n=>n.partners)).size;
  $('tree-summary').textContent=`${count} people in view · ${total} in the archive`;
@@ -40,7 +40,7 @@ function renderTree({camera='readable',anchor=null}={}){
  else if(camera==='fit')fitTree();else readableView();
 }
 function personCard(id,index,node){
- const p=people[id],selected=highlight===id,isMain=index===0,hasSharedPhoto=groupPhotosForPerson(id).length>0;
+ const p=people[id],selected=highlight===id,isMain=id===node.id,hasSharedPhoto=groupPhotosForPerson(id).length>0;
  return `<button class="person-card ${isMain?'descendant-card':'spouse-card'} ${node.depth===0?'founding-card':''} ${selected?'person-highlight':''}" data-person="${id}" style="left:${index*(PERSON_WIDTH+SPOUSE_GAP)}px" aria-label="View ${esc(p.name)} details"><span class="person-meta"><span>${isMain?'GENERATION '+String(p.generation).padStart(2,'0'):'MARRIED TO'}</span>${p.photo?`<img class="person-photo" src="${esc(p.photo)}" alt="" loading="lazy" width="28" height="36">`:hasSharedPhoto?'<span class="shared-photo-badge" title="Family photograph available" aria-hidden="true">▧</span>':`<span class="person-initials" aria-hidden="true">${initials(id)}</span>`}</span><strong>${esc(p.name)}</strong>${p.placeholder?'<span class="person-place">Name not recorded</span>':p.sourceNotes?`<span class="person-place source-flag">${esc(p.sourceNoteTitle||'Source spelling to confirm')}</span>`:p.place?`<span class="person-place">⌖ ${esc(p.place)}</span>`:p.deceased?'<span class="person-place">In remembrance</span>':''}</button>`;
 }
 function groupMarkup(node){
