@@ -19,6 +19,7 @@ test('Sarojini grandchildren and their spouses follow the descending connectors'
  assert.deepEqual(parentsFor('sKaran'),['sArchana','sShankar']);
  assert.deepEqual(spousesFor('sKaran'),['sPeyasha']);
  assert.deepEqual(parentsFor('sNirbhay'),['sArchana','sShankar']);
+ assert.deepEqual(spousesFor('sNirbhay'),['sMihika']);
  assert.deepEqual(childrenFor('sGirish'),['sGaurav','sNavami']);
  assert.deepEqual(parentsFor('sHeera'),['sVignesh','sSurya']);
  assert.deepEqual(parentsFor('sMeghna'),['sAthira','sKrishnaMoorthy']);
@@ -27,7 +28,7 @@ test('Sarojini grandchildren and their spouses follow the descending connectors'
 });
 
 test('Source spellings and similarly named people stay distinct across branches',()=>{
- assert.equal(people.sPeyasha.name,'Peyasha');
+ assert.equal(people.sPeyasha.name,'Peyasha Sehgal');
  assert.equal(people.sAmarys.name,'Amarys Praveen');
  assert.equal(people.sGirish.name,'Girish Thampy');
  assert.deepEqual(spousesFor('sRamachandran'),['sPrema']);
@@ -39,9 +40,9 @@ test('Source spellings and similarly named people stay distinct across branches'
  assert.equal(branchFor('sSrinath'),'sarojini');
 });
 
-test('All 32 people in the Sarojini branch fit its flowchart without overlapping couples',()=>{
+test('All 33 people in the Sarojini branch fit its flowchart without overlapping couples',()=>{
  const tree=layoutTree('sarojini',new Set(['sarojini',...descendantIds('sarojini')]));
- assert.equal(new Set(tree.nodes.flatMap(n=>n.partners)).size,32);
+ assert.equal(new Set(tree.nodes.flatMap(n=>n.partners)).size,33);
  assert.equal(tree.truncated,false);
  for(const n of tree.nodes)for(const o of tree.nodes.filter(o=>o.depth===n.depth&&o.x>n.x))assert.ok(n.x+n.ownWidth<=o.x);
 });
