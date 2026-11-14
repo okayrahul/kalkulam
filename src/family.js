@@ -1,5 +1,6 @@
 import {rajammaPeople,rajammaFamilies} from './rajamma.js';
 import {thuckalayPeople,thuckalayFamilies} from './thuckalay.js';
+import {thuckalayContacts,thuckalayContactPeople} from './thuckalay-contacts.js';
 import {parameshwaranPeople,parameshwaranFamilies} from './parameshwaran.js';
 import {kulashekaramPeople,kulashekaramFamilies} from './kulashekaram.js';
 import {arappuraPeople,arappuraFamilies} from './arappura.js';
@@ -293,11 +294,13 @@ export const people = {
   pSaiArjun: {"name": "A.L. Sai Arjun", "generation": 5, "source": {"document": "Poovangaparambu 10.pdf", "page": 2, "relationship": "Child of Adv. S. Ayyappadas"}},
   ...rajammaPeople,
   ...thuckalayPeople,
+  ...thuckalayContactPeople,
   ...parameshwaranPeople,
   ...kulashekaramPeople,
   ...arappuraPeople,
 };
 export const branchIds = ['tanuvan','parameshwaran','vishwanathan','sukumaran','kamalamma','thankamma','kanakamma','rajamma','sarada','omana','sarojini'];
+for (const [id, contact] of Object.entries(thuckalayContacts)) Object.assign(people[id], contact);
 export const families = [
   ...rajammaFamilies,
   ...thuckalayFamilies,

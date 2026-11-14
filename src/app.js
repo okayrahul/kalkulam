@@ -109,8 +109,8 @@ $('search').addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefa
 function relatives(label,ids){return ids.length?`<p class="relationship-label">${label}</p>${ids.map(id=>`<button class="relative" data-person="${id}">${esc(people[id].name)}<span>↗</span></button>`).join('')}`:'';}
 function profileContact(p){
  if(!p.phone)return '';
- const dial=p.phone.replace(/[\s().-]/g,'');
- return `<div class="profile-contact"><p class="relationship-label">MOBILE</p><a href="tel:${esc(dial)}" aria-label="Call ${esc(p.name)} at ${esc(p.phone)}">${esc(p.phone)}<span aria-hidden="true">↗</span></a><small>As recorded in the Arappura family address book.</small></div>`;
+ const dial=p.phoneDial||p.phone.replace(/[\s().-]/g,'');
+ return `<div class="profile-contact"><p class="relationship-label">PHONE</p><a href="tel:${esc(dial)}" aria-label="Call ${esc(p.name)} at ${esc(p.phone)}">${esc(p.phone)}<span aria-hidden="true">↗</span></a><small>${p.phoneSource?'As recorded in the supplied Thuckalay contact notes.':'As recorded in the Arappura family address book.'}</small></div>`;
 }
 function sharedPhotoMarkup(id){
  return groupPhotosForPerson(id).map(group=>{
