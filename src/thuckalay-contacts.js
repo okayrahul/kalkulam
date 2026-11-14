@@ -42,8 +42,8 @@ export const thuckalayContacts = {
   thKumaradas: {phone:"7418490240",phoneSource:contactSource(5)},
   thSujatha: {phone:"9080301334",phoneSource:contactSource(5)},
   thSreekumar: {phone:"7578933599",phoneSource:contactSource(5)},
-  thSukumaran: {sourceNoteTitle:'Phone number to confirm',sourceNotes:['The notebook gives 9498196553. The copied contact sheet gives 9493196553. Please confirm the correct number.']},
-  k76: {sourceNoteTitle:'Phone number to confirm',sourceNotes:['The notebook gives 9400402057. The copied contact sheet gives 9447450096, which is also listed for B. Gopakumaran Thampi. Please confirm the correct number.']},
+  thSukumaran: {phone:'9498196553',phoneSource:{document:'User-confirmed Thuckalay contacts',confirmedBy:'user'}},
+  k76: {phone:'9400402057',phoneSource:{document:'User-confirmed Thuckalay contacts',confirmedBy:'user'}},
 };
 
 export const thuckalayContactPeople = {
@@ -56,6 +56,6 @@ export const thuckalayContactPeople = {
   thDinesh: {name:"Dinesh",generation:5,source:{...contactSource(3),relationship:"Child of Sulochana and Bakthavalsalan Nair"}},
   thSatheesh: {name:"Satheesh",generation:5,source:{...contactSource(3),relationship:"Child of Sulochana and Bakthavalsalan Nair"}},
   thMeera: {name:"Meera Thampi",generation:5,source:{...contactSource(5),relationship:"Child of Dr. P. Padmanabhan Thampi and Dr. Padma Thampi"},phone:"9447041202",phoneSource:contactSource(5)},
-  thKesav: {name:"Kesav Thampi",generation:5,source:{...contactSource(5),relationship:"Child of Dr. P. Padmanabhan Thampi and Dr. Padma Thampi"},sourceNoteTitle:'Phone number to confirm',sourceNotes:['The copied sheet gives 8547762731. The notebook appears to give 91854762731. Please confirm the correct number.']},
+  thKesav: {name:"Kesav Thampi",generation:5,source:{...contactSource(5),relationship:"Child of Dr. P. Padmanabhan Thampi and Dr. Padma Thampi"},phone:'8547762731',phoneSource:{document:'User-confirmed Thuckalay contacts',confirmedBy:'user'}},
   thSandhya: {name:"Sandhya",generation:5,source:{...contactSource(5),relationship:"Child of Sowdamini Thankachi and Nagendran"},phone:"9446594435",phoneSource:contactSource(5)},
 };
