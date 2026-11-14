@@ -44,8 +44,8 @@ test('Kulashekaram reuses the existing Omana ancestor and includes every source 
   assert.ok(p.source.relationship);
   for(const parent of parentsFor(id))assert.equal(p.generation,people[parent].generation+1,id);
  }
- assert.equal(Object.keys(people).length,643);
- assert.equal(families.length,236);
+ assert.equal(Object.keys(people).length,654);
+ assert.equal(families.length,237);
 });
 
 test('Kulashekaram deep paths and single-parent connectors match the figure',()=>{
