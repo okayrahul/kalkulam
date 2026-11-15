@@ -108,9 +108,15 @@ $('search').addEventListener('focus',()=>{if(query)renderSearch();});
 $('search').addEventListener('keydown',e=>{if(e.key==='ArrowDown'){e.preventDefault();$('search-results').querySelector('button')?.focus();}if(e.key==='Escape'){$('search-results').hidden=true;$('search').setAttribute('aria-expanded','false');}if(e.key==='Enter'){const id=searchPeople(query)[0];if(id){e.preventDefault();revealPerson(id);$('search-results').hidden=true;$('search').setAttribute('aria-expanded','false');$('search').blur();}}});
 function relatives(label,ids){return ids.length?`<p class="relationship-label">${label}</p>${ids.map(id=>`<button class="relative" data-person="${id}">${esc(people[id].name)}<span>↗</span></button>`).join('')}`:'';}
 function profileContact(p){
- if(!p.phone)return '';
- const dial=p.phoneDial||p.phone.replace(/[\s().-]/g,'');
- return `<div class="profile-contact"><p class="relationship-label">PHONE</p><a href="tel:${esc(dial)}" aria-label="Call ${esc(p.name)} at ${esc(p.phone)}">${esc(p.phone)}<span aria-hidden="true">↗</span></a><small>${p.phoneSource?'As recorded in the supplied Thuckalay contact notes.':'As recorded in the Arappura family address book.'}</small></div>`;
+ const numbers=p.phones||(p.phone?[p.phone]:[]);
+ const links=numbers.map(number=>{
+   const dial=number===p.phone&&p.phoneDial?p.phoneDial:number.replace(/[\s().-]/g,'');
+   return `<a href="tel:${esc(dial)}" aria-label="Call ${esc(p.name)} at ${esc(number)}">${esc(number)}<span aria-hidden="true">↗</span></a>`;
+ }).join('');
+ const source=p.phoneSource?'As recorded in the supplied family contact details.':'As recorded in the Arappura family address book.';
+ const personal=links?`<div class="profile-contact"><p class="relationship-label">PHONE</p>${links}<small>${source}</small></div>`:'';
+ const family=(p.familyContacts||[]).map(contact=>`<div class="profile-contact"><p class="relationship-label">FAMILY CONTACT · ${esc(contact.name)}</p><a href="tel:${esc(contact.phone.replace(/[\s().-]/g,''))}">${esc(contact.phone)}<span aria-hidden="true">↗</span></a><small>${esc(contact.note)}</small></div>`).join('');
+ return personal+family;
 }
 function sharedPhotoMarkup(id){
  return groupPhotosForPerson(id).map(group=>{

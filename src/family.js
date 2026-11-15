@@ -1,4 +1,5 @@
 import {rajammaPeople,rajammaFamilies} from './rajamma.js';
+import {nangakoikkalPeople,nangakoikkalFamilies} from './nangakoikkal.js';
 import {thuckalayPeople,thuckalayFamilies} from './thuckalay.js';
 import {thuckalayContacts,thuckalayContactPeople} from './thuckalay-contacts.js';
 import {parameshwaranPeople,parameshwaranFamilies} from './parameshwaran.js';
@@ -18,7 +19,7 @@ export const people = {
   saraswathi: {"name": "L. K. Saraswathi", "generation": 2, "photo": "./assets/saraswathi.jpg", "source": {"document": "Poovangaparambu 10.pdf", "page": 1}},
   kamalamma: {name:'V. Kamalamma Thankachi', generation:2, place:'Thuckalay', aliases:['Parvathi Pilla Thankachi',"Parvathi Pillai Thankachi"], deceased:true, source:{document:"Thuckalay.docx"}},
   velayudhan: {name:'Velayudhan Thampi', generation:2, deceased:true, note:"Thuckalay family.", source:{document:"Thuckalay.docx"}},
-  thankamma: {name:'V. Thankamma Thankachi', generation:2, place:'Eraniel'},
+  thankamma: {name:'V. Thankamma Thankachi', generation:2, place:'Eraniel', deceased:true, note:'Nangakoikkal family. The eleven children are listed elder to younger, as supplied by the family.', source:{document:'Nangakoikkal family messages and diagrams'}},
   kanakamma: {name:'Kanakamma Thankachi', generation:2, place:'Nagercoil'},
   rajamma: {name:'Rajamma Thankachi', generation:2, place:'Sasthamangalam', aliases:['V. Rajamma Thankachy'], source:{document:'Kalkulam_Family_Tree_v5.pdf',page:1}},
   sarada: {name:'V. Sharada Thankachy', generation:2, aliases:['V. Sarada Thankachi'], honorific:'Smt.', place:'Arappuraveedu, Thampanoor', deceased:true, photo:'./assets/sharada.jpg', source:{document:'Arappura-2026.pdf',page:1}},
@@ -293,6 +294,7 @@ export const people = {
   pGayatri: {"name": "P.R. Gayatri", "generation": 5, "source": {"document": "Poovangaparambu 10.pdf", "page": 2, "relationship": "Child of Dr. S. Praveen Kumar"}},
   pSaiArjun: {"name": "A.L. Sai Arjun", "generation": 5, "source": {"document": "Poovangaparambu 10.pdf", "page": 2, "relationship": "Child of Adv. S. Ayyappadas"}},
   ...rajammaPeople,
+  ...nangakoikkalPeople,
   ...thuckalayPeople,
   ...thuckalayContactPeople,
   ...parameshwaranPeople,
@@ -303,6 +305,7 @@ export const branchIds = ['tanuvan','parameshwaran','vishwanathan','sukumaran','
 for (const [id, contact] of Object.entries(thuckalayContacts)) Object.assign(people[id], contact);
 export const families = [
   ...rajammaFamilies,
+  ...nangakoikkalFamilies,
   ...thuckalayFamilies,
   ...parameshwaranFamilies,
   {id:'founders', partners:['kumarapilla','valliyamma'], children:branchIds},
